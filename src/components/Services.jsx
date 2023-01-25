@@ -1,6 +1,13 @@
 import React from 'react'
 
-const Services = ({services}) => {
+const Services = ({services, contact}) => {
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+            top: elementRef.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        })
+      }
     return (
     <div ref={services} className='bg-base-200 py-20'>
         <h1 className='text-5xl mb-10 text-center font-semibold'>Services</h1>
@@ -18,7 +25,7 @@ const Services = ({services}) => {
                 <div className="badge badge-outline">Fast Delivery</div>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button onClick={()=> scrollToSection(contact.current)} className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -35,7 +42,7 @@ const Services = ({services}) => {
                 <div className="badge badge-outline">Customizable</div>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button onClick={()=> scrollToSection(contact.current)} className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
         </div>
@@ -52,7 +59,7 @@ const Services = ({services}) => {
                 <div className="badge badge-outline">Fast</div>
                 </div>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button onClick={()=> scrollToSection(contact.current)} className="btn btn-primary">Buy Now</button>
                 </div>
             </div>
         </div>

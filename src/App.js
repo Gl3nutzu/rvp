@@ -1,11 +1,12 @@
 import { useRef } from 'react';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import About from './components/About';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Hero from './components/Hero';
 import Navbar from './components/Navbar';
-import Services from './components/Services';
+import Cookie from './screens/Cookie';
+import Home from './screens/Home';
+import Privacy from './screens/Privacy';
+import Terms from './screens/Terms';
 
 function App() {
   const about = useRef(null);
@@ -14,12 +15,16 @@ function App() {
 
   return (
     <>
-      <Navbar about={about} services={services} contact={contact}/>
-      <Hero/>
-      <About about={about} />
-      <Services services={services}/>
-      <Contact contact={contact}/>
+    <Router>
+    <Navbar about={about} services={services} contact={contact}/>
+      <Routes>
+        <Route path="/" element={<Home about={about} services={services} contact={contact}/>} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/cookie" element={<Cookie />} />
+      </Routes>
       <Footer about={about} services={services} contact={contact}/>
+    </Router>
     </>
   );
 }

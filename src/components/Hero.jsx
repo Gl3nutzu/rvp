@@ -1,7 +1,14 @@
 import React from 'react'
 import Dev from '../utils/Dev.svg'
 
-const Hero = () => {
+const Hero = ({services}) => {
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+            top: elementRef.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+        })
+    }
   return (
     <>
         <div className="hero min-h-screen bg-base-200">
@@ -10,7 +17,7 @@ const Hero = () => {
                 <div>
                 <h1 className="text-5xl font-bold">WE’RE THE WHOLE PACKAGE</h1>
                 <p className="py-6">Trusted guidance, global expertise, secure integration. We design and develop custom software solutions that deliver digital transformation at scale.</p>
-                <button className="btn btn-primary">Get Started</button>
+                <button onClick={()=> scrollToSection(services.current)} className="btn btn-primary">Get Started</button>
                 </div>
             </div>
         </div>

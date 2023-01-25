@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Footer = ({about, services, contact}) => {
     const scrollToSection = (elementRef) => {
-        window.scrollTo({
+        elementRef ?? window.scrollTo({
             top: elementRef.offsetTop,
             left: 0,
             behavior: 'smooth'
@@ -24,13 +25,13 @@ const Footer = ({about, services, contact}) => {
             <span className="footer-title">Company</span> 
             <button onClick={()=> scrollToSection(about.current)} className="link link-hover">About us</button> 
             <button onClick={()=> scrollToSection(contact.current)} className="link link-hover">Contact</button> 
-            <button href='/' className="link link-hover">Jobs</button> 
+            <button onClick={()=> scrollToSection(contact.current)} className="link link-hover">Jobs</button> 
         </div> 
         <div>
             <span className="footer-title">Legal</span> 
-            <a href='/' className="link link-hover">Terms of use</a> 
-            <a href='/' className="link link-hover">Privacy policy</a> 
-            <a href='/' className="link link-hover">Cookie policy</a>
+            <Link to={'/terms'}>Terms of use</Link>
+            <Link to={'/privacy'}>Privacy policy</Link>
+            <Link to={'/cookie'}>Cookie policy</Link>
         </div>
         </footer>
   )

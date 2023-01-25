@@ -1,4 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+
+import Logo from '../assets/rvp.png';
 
 const Navbar = ({about, services, contact}) => {
     const scrollToSection = (elementRef) => {
@@ -17,20 +20,20 @@ const Navbar = ({about, services, contact}) => {
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                 </label>
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a href='/'>Homepage</a></li>
-                    <li><button onClick={()=> scrollToSection(about.current)}>About</button></li>
-                    <li><button onClick={()=> scrollToSection(services.current)}>Services</button></li>
-                    <li><button onClick={()=> scrollToSection(contact.current)}>Contact</button></li>
+                    <li><Link to={'/'}>Homepage</Link></li>
+                    <li><button onClick={()=> {if(about != null) scrollToSection(about.current)}}>About</button></li>
+                    <li><button onClick={()=> {if(services != null) scrollToSection(services.current)}}>Services</button></li>
+                    <li><button onClick={()=> {if(contact != null) scrollToSection(contact.current)}}>Contact</button></li>
                 </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl" href='/'>RVPSoft</a>
+            <a className="btn btn-ghost normal-case text-xl" href='/'><img src={Logo} alt='LOGO' width={210} height={40}></img></a>
         </div>
         <div className="navbar-center hidden md:flex">
         <ul tabIndex={0} className="menu menu-horizontal p-0 ">
-            <li><a href='/'>Homepage</a></li>
-            <li><button onClick={()=> scrollToSection(about.current)}>About</button></li>
-            <li><button onClick={()=> scrollToSection(services.current)}>Services</button></li>
-            <li><button onClick={()=> scrollToSection(contact.current)}>Contact</button></li>
+            <li><Link to={'/'}>Homepage</Link></li>
+            <li><button onClick={()=> {if(about != null) scrollToSection(about.current)}}>About</button></li>
+            <li><button onClick={()=> {if(services != null) scrollToSection(services.current)}}>Services</button></li>
+            <li><button onClick={()=> {if(contact != null) scrollToSection(contact.current)}}>Contact</button></li>
         </ul>
         </div>
         <div className="navbar-end">
