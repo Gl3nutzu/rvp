@@ -16,7 +16,7 @@ const Hero = ({services}) => {
                 <img src={Dev} alt="hero" className="max-w-sm rounded-lg shadow-2xl" />
                 <div>
                 <h1 className="text-5xl font-bold">WE’RE THE WHOLE PACKAGE</h1>
-                <p className="py-6">Trusted guidance, global expertise, secure integration. We design and develop custom software solutions that deliver digital transformation at scale.</p>
+                <p className="py-6">We design and develop websites that deliver outstanding results. Our web development agency can manage the entire web development process for your company. From design, to development, testing, or if you already have a website, we can provide you with support and maintenance to simplify your internal processes.</p>
                 <button onClick={()=> scrollToSection(services.current)} className="btn btn-primary">Get Started</button>
                 </div>
             </div>
