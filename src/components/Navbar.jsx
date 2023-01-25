@@ -26,7 +26,7 @@ const Navbar = ({about, services, contact}) => {
                     <li><button onClick={()=> {if(contact != null) scrollToSection(contact.current)}}>Contact</button></li>
                 </ul>
             </div>
-            <a className="btn btn-ghost normal-case text-xl" href='/'><img src={Logo} alt='LOGO' width={210} height={40}></img></a>
+            <a className="btn btn-ghost normal-case text-xl" href='/'><img src={Logo} alt='LOGO' width={170} height={33}></img></a>
         </div>
         <div className="navbar-center hidden md:flex">
         <ul tabIndex={0} className="menu menu-horizontal p-0 ">

@@ -16,18 +16,18 @@ const Contact = ({contact}) => {
                 <div className="card-body items-center text-center py-20">
                     <h2 className="card-title mb-4"><AiOutlineHome className='text-5xl'/></h2>
                     <p className='text-2xl'>Bucharest, Romania</p>
-                    <p className='text-xl'>Aleea Urucu Adrian Dan, 1</p>
                 </div>
             </div>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body items-center text-center py-20">
                     <h2 className="card-title mb-4"><AiOutlineMail className='text-5xl'/></h2>
-                    <p className='text-2xl'>office@rvpsoft.com</p>
+                    <p className='text-2xl'><a href='mailto:office@rvpsoft.com'>office@rvpsoft.com</a></p>
                 </div>
             </div>
         </div>
         <div className='flex flex-col items-center gap-4'>
             <h1 className='text-2xl font-semibold'>Get in touch with us!</h1>
+            <p>And we'll send you an offer as soon as possible!</p>
             <div className='flex gap-4 mx-2 md:mx-0'>
                 <input type="text" placeholder="Your Name" className="input input-bordered w-full max-w-xs" />
                 <input type="text" placeholder="E-mail" className="input input-bordered w-full max-w-xs" />
