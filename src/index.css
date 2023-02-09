@@ -15,3 +15,41 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app-layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.trans {
+  background: linear-gradient(to left, white 50%, #ec6627 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+.trans:hover {
+  background-position: left;
+}
+
+.transa {
+  background: linear-gradient(to left, white 50%, #258bff 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+.transa:hover {
+  background-position: left;
+}
+
+.transb {
+  background: linear-gradient(to left, white 50%, #22D3EE 50%) right;
+  background-size: 200%;
+  transition: .5s ease-out;
+}
+
+.transb:hover {
+  background-position: left;
+}
