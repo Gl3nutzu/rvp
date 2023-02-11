@@ -1,17 +1,20 @@
 import React from 'react'
 import Dev from '../utils/Dev.svg'
 import { Link } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+import "../translations/i18n.js";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <>
         <div className="hero min-h-screen text-black">
             <div className="hero-content flex-col mt-4 lg:mt-0 lg:flex-row-reverse gap-4">
                 <img src={Dev} alt="hero" className="max-w-sm md:max-w-md rounded-lg shadow-2xl mt-10 md:mt-0" />
                 <div>
-                    <h1 className="text-6xl md:text-8xl font-bold">We make great digital products for <span className='text-primary'>innovative</span> brands.</h1>
-                    <p className="py-6 opacity-75">We design and develop websites that deliver outstanding results. Our web development agency can manage the entire web development process for your company. From design, to development, testing, or if you already have a website, we can provide you with support and maintenance to simplify your internal processes.</p>
-                    <Link to={'/services'}><button className="btn btn-primary text-white rounded-full w-[10rem]">See our services</button></Link>
+                    <h1 className="text-6xl md:text-8xl font-bold">{t("herotitle1")} <span className='text-primary'>{t("herotitleblue")}</span> {t("herotitle2")}</h1>
+                    <p className="py-6 opacity-75 md:mr-4">{t("herosub")}</p>
+                    <Link to={'/services'}><button className="btn btn-primary text-white rounded-full w-[10rem]">{t("herobutt")}</button></Link>
                 </div>
             </div>
         </div>
